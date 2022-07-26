@@ -36,3 +36,18 @@ var twoSum = function(nums, target) {
   }
 };
 console.log(twoSum([2, 7, 11, 15], 9));
+
+//method2-hashmap
+Hashmap is a great way to optimize some of the algorithms at the cost of some space.
+
+var twoSum = function (nums, target) {
+  let obj = {}
+  for (let i = 0; i < nums.length; i++) {
+    if (target - nums[i] in obj) {
+      return [obj[target - nums[i]], i]
+    } else {
+      obj[nums[i]] = i;
+    }
+  }
+};
+console.log(twoSum([2, 7, 11, 15], 9));
